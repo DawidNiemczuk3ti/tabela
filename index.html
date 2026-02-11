@@ -1,16 +1,76 @@
 <html lang="PL">
-	<head>
-		<title>dokument</title>
-		<meta charset="UTF-8">
-	</head>
-		<body> 
-			<main>
-				<aside>bialas</aside>
-				<section id="Prawa">
-					<section id=UP>nigga</section>
-					<section id=DOWN>kaban</section>
-				</section>
-			</main>
-			    <footer>feds</footer>
-		</body>	
+<head>
+<meta charset="UTF-8">
+<title>Układ strony</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.main-container {
+    border: 3px solid black;
+    padding: 10px;
+}
+
+.content {
+    display: flex;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.aside {
+    width: 30%;
+    border-right: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.sections {
+    width: 70%;
+}
+
+.section {
+    border-bottom: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+.footer {
+    border: 2px solid black;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+</style>
+
+</head>
+<body>
+
+<div class="main-container">
+    <h2>Blok główny</h2>
+
+    <div class="content">
+        <div class="aside">
+            Blok boczny
+        </div>
+
+        <div class="sections">
+            <div class="section">Sekcja 1</div>
+            <div class="section">Sekcja 2</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Blok stopki
+    </div>
+</div>
+
+</body>
 </html>
