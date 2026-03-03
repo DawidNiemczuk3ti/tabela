@@ -1,70 +1,59 @@
-<html lang="PL">
+<!DOCTYPE html>
+<html lang="pl">
 <head>
 <meta charset="UTF-8">
-<title>Układ strony</title>
-
-<style>
-body {
-    font-family: Arial, sans-serif;
-}
-
-.main-container {
-    padding: 10px;
-}
-
-.content {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.aside {
-    width: 30%;
-    padding: 20px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.sections {
-    width: 70%;
-}
-
-.section {
-    padding: 20px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.section:last-child {
-}
-
-.footer {
-    padding: 20px;
-    text-align: center;
-    font-weight: bold;
-}
-</style>
-
+<title>Gry komputerowe</title>
+<link rel="stylesheet" href="styl.css">
 </head>
+
 <body>
 
-<div class="main-container">
-    <h2>Nie wiem co tutaj wpisać</h2>
+<header>
+    <h1>Ranking gier komputerowych</h1>
+</header>
 
-    <div class="content">
-        <div class="aside">
-            Bi zorê wergerînin
-        </div>
+<main>
 
-        <div class="sections">
-            <div class="section">Είμαι Ρασταφάρι από την Ελλάδα</div>
-            <div class="section">Totale toevallige boodskap</div>
-        </div>
-    </div>
+<section class="lewa">
+    <h3>Top 5 gier w tym miesiącu</h3>
+    <ul>
+        <?php
+        foreach($top5 as $gra){
+            echo "<li>$gra</li>";
+        }
+        ?>
+    </ul>
 
-    <div class="footer">
-        我看得很悲觀
-    </div>
-</div>
+    <h3>Nasz sklep</h3>
+    <a href="http://sklep.gry.pl">Tu kupisz gry</a>
+
+    <h3>Stronę wykonał</h3>
+    <p>00000000000</p>
+</section>
+
+<section class="srodkowa">
+    <?php echo $dodanaGra; ?>
+</section>
+
+<section class="prawa">
+    <h3>Dodaj nową grę</h3>
+    <form method="POST" action="gry.php">
+        Nazwa: <input type="text" name="nazwa"><br>
+        Opis: <input type="text" name="opis"><br>
+        Cena: <input type="number" name="cena"><br>
+        Zdjęcie: <input type="file" name="zdjecie"><br>
+        <input type="submit" value="DODAJ">
+    </form>
+</section>
+
+</main>
+
+<footer>
+    <form method="POST" action="gry.php">
+        <input type="submit" name="pokaz" value="Pokaż opis">
+    </form>
+    <?php echo $opisInfo; ?>
+</footer>
 
 </body>
 </html>
